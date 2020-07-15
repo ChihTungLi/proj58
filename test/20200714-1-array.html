@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    const ar = [1,2,3,4,[5,6,7],8];
+
+    const ar1 = ar.concat();
+    const ar2 = ar.slice(1,5);
+    const ar3 = [...ar,];
+    const ar4=JSON.parse(JSON.stringify(ar));
+
+    ar[2]=['Hi',333];
+    ar[4][1]=666;
+
+    info.innerHTML += JSON.stringify(ar) + '<br>';
+    info.innerHTML += JSON.stringify(ar1) + '<br>';
+    info.innerHTML += JSON.stringify(ar2) + '<br>';
+    info.innerHTML += JSON.stringify(ar3) + '<br>';
+    info.innerHTML += JSON.stringify(ar4) + '<br>';
+
+    //--------------------
+
+    const obj ={
+        name:{
+            first:'Happy',
+            family:'Li',
+        },
+        age:32,
+        gender:'male'
+    }
+
+    const obj1=Object.assign({},obj);
+    const obj2={...obj};
+    const obj3=JSON.parse(JSON.stringify(obj));
+
+    obj.age=55;
+    obj['name'].first='Sad';
+
+    info.innerHTML += JSON.stringify(obj) + '<br>';
+    info.innerHTML += JSON.stringify(obj1) + '<br>';
+    info.innerHTML += JSON.stringify(obj2) + '<br>';
+    info.innerHTML += JSON.stringify(obj3) + '<br>';
+</script>
+</body>
+</html>
